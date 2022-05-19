@@ -38,12 +38,7 @@ public class RestaurantController {
         restaurantRepository.save(restaurant);
     }
 
-    /**
-     * This method will completely replace the existing restaurant with <code>id</code> with <code>updatedRestaurant</code>.
-     * @param updatedRestaurant this needs to have the full details for the restaurant you're updating
-     * @param id the ID of the restaurant you are updating. This will be used to locate and update the restaurant to be
-     *           changed, NOT the ID in the updatedRestaurant object
-     */
+
     @PutMapping("/restaurants/{id}")
     Restaurant replaceRestaurant(@RequestBody Restaurant updatedRestaurant, @PathVariable String id) {
         if (!restaurantExists(id)) {
